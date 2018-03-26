@@ -219,6 +219,9 @@ git log --stat -2 (show stats of last 2 commits -- changed files +sha-1)
 git log --pretty=oneline
 git log --since=2.weeks --pretty=oneline
 git log --pretty="%h - %s" --author=gitster --after="2008-10-01T00:00:00-0400" --before="2008-10-31T23:59:59-0400" --no-merges -- t
+# chow commits in mybranch that are not in master
+git log mybranch --not master
+git diff master...mybranch (show changes in mybranches (comp to common ancestor in master)
 gitk (visual)
 
 
