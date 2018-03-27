@@ -86,6 +86,14 @@ Merge made by recursive.
 
 git: works with changeset (hash of changes + hash of previous)
 
+# some other useful commands:
+git show master
+git show origin/master
+git branch
+# show diff between master & origin/master
+git log master..origin/master
+# if there are new changes then following command should do a fast forward merge:
+git merge origin/master
 
  show current state
 git log --graph
@@ -199,6 +207,7 @@ https://git-scm.com/book/nl/v1/Branchen-in-Git-Rebasen
 git checkout mybranch
 git rebase master
 (hierboven zit je op mybranch en je gaat changes applied op mybranch replayen op de laatste commit van de master branch)
+(note je zit nog steeds op mybranch die nu eigenlijk is gereplayed op de master branch)
 (note: de master head gaat nog verwijzen naar de vorige commit, dus moet je een FFWD merge doen:)
 git checkout master
 git merge mybranch
