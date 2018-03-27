@@ -218,7 +218,11 @@ git rebase --onto master server client
 
 
 # apply patches
-git apply(only with diff files) of met git am.
+git apply(only with diff files) of met git am (format-patch).
+# git apply:
+#Het handelt ook het toevoegen, verwijderen, en hernoemen van bestanden af als ze beschreven staan in het git diff formaat, wat patch
+# niet doet 
+git apply --check ddd.patch
 # use 3way merge where possible (if the patch is based on a commit that is available, otherwise it is not possible)
 git am -3 0001-seeing-if-this-helps-the-gem.patch
 
@@ -236,7 +240,11 @@ git log --since=2.weeks --pretty=oneline
 git log --pretty="%h - %s" --author=gitster --after="2008-10-01T00:00:00-0400" --before="2008-10-31T23:59:59-0400" --no-merges -- t
 # chow commits in mybranch that are not in master
 git log mybranch --not master
+git log master..experiment (alle commits in experiment, that are not in master)7
+git log origin/master..HEAD (alle commits in head, but not in remote origin/master (so what you will push))
+git log refA refB --not refC (commits in refA&refB, but not in refC)
 git diff master...mybranch (show changes in mybranches (comp to common ancestor in master)
+!! De laatste veelgebruikte reeks-selectie syntax is de drievoudige punt syntax, wat alle commits specificeert die bereikbaar zijn door één van de twee referenties, maar niet door allebei !!
 gitk (visual)
 
 
@@ -277,7 +285,8 @@ git config --global core.editor emacs
 git config --global merge.tool vimdiff
 git config --list
 git unstage myfile
-                                                   
+        
+# git cherry-pick SHA1CODE
 # add files
 git add myfile (note the file will be staged, it will be the change in file at that point that will be committed)
 
