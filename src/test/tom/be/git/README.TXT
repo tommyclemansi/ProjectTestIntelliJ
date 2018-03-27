@@ -218,6 +218,7 @@ git rebase --onto master server client
 
 
 # apply patches
+git apply(only with diff files) of met git am.
 # use 3way merge where possible (if the patch is based on a commit that is available, otherwise it is not possible)
 git am -3 0001-seeing-if-this-helps-the-gem.patch
 
