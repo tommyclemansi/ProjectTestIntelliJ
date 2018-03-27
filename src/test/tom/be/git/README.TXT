@@ -216,6 +216,11 @@ git merge mybranch
 # take the client branch, (diff from server branch) and apply on master
 git rebase --onto master server client
 
+
+# apply patches
+# use 3way merge where possible (if the patch is based on a commit that is available, otherwise it is not possible)
+git am -3 0001-seeing-if-this-helps-the-gem.patch
+
 # show current state
 git log --graph
 git log --graph --oneline (shows branch- merge history)
