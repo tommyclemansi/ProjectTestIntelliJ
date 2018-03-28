@@ -94,14 +94,14 @@ git branch
 git log master..origin/master
 # if there are new changes then following command should do a fast forward merge:
 git merge origin/master
-
+https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging
  show current state
 git log --graph
 git log --graph --oneline
 git log --pretty=format:"%h %s" --graph
 git log --oneline --decorate
 git log --online --decorate --graph --all
-
+git blame -L 1,2 test (see who changed file test in lines 1 until 2)
 
 # show remote repo: (default name is origin)
 git remote -v
