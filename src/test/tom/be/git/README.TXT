@@ -160,6 +160,9 @@ git commit -m "add README"
 git push -u origin master
 # see status of current files (staged-- committed.. )
 git status
+7515524@s51lvrw:~/ansible/ansibletest1 $ git status -sb
+## master...origin/master [ahead 1] (here we are 1 commit ahead of master)
+
 git log
 git log --stat
 
@@ -240,12 +243,17 @@ git log --since=2.weeks --pretty=oneline
 git log --pretty="%h - %s" --author=gitster --after="2008-10-01T00:00:00-0400" --before="2008-10-31T23:59:59-0400" --no-merges -- t
 # chow commits in mybranch that are not in master
 git log mybranch --not master
-git log master..experiment (alle commits in experiment, that are not in master)7
+git log master..experiment (alle commits in experiment, that are not in master)
+git log master..experiment (alle commits in experiment, that are not in master)
+git log master...experiment (commits in master & experiment but not shared (so not the common ancestors)
 git log origin/master..HEAD (alle commits in head, but not in remote origin/master (so what you will push))
 git log refA refB --not refC (commits in refA&refB, but not in refC)
+git log -S ZLIB_BUF_MAX --oneline (show commits that introduced ZLIB_BUF_MAX)
 git diff master...mybranch (show changes in mybranches (comp to common ancestor in master)
 !! De laatste veelgebruikte reeks-selectie syntax is de drievoudige punt syntax, wat alle commits specificeert die bereikbaar zijn door één van de twee referenties, maar niet door allebei !!
 gitk (visual)
+
+# resetting (undo changes): see https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified
 
 
 # show remote repo: (default name is origin)
@@ -320,6 +328,10 @@ tagger Cleymans Tom (100) <tom.cleymans@cm.be> 1521193152 +0100
 
 version 1.0
 
+
+git stash (save changes on stack without commit)
+git stash list
+git stash apply
 
 2DO
 ===
