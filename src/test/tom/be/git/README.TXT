@@ -10,9 +10,11 @@ unstaged         -        staged            -           comitted
 
 Most used commands:
 --------------------
-git log --pretty=format:"%h - %ce, %cd : %s" --graph --stat
 # show commits where file was adapted:
-git log --pretty=format:"%h - %ce, %cd : %s" --graph --stat tests/startplaybook.sh
+git log --pretty=format:"%h - %ce, %cd : %s" --graph --stat (tests/startplaybook.sh)
+
+# diffs:
+git difftool --tool=vimdiff2 (--staged)
 
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
@@ -168,6 +170,7 @@ git add README.md
 git diff
 # see what is staged (after last commit)
 git diff --staged
+git difftool --tool-help
 
 git commit -m "add README"
 git push -u origin master
