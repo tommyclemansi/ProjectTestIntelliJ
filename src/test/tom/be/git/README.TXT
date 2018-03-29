@@ -1,6 +1,13 @@
 GIT SUMMARY
 ============
 
+BASICS
+------
+unstaged         -        staged            -           comitted 
+                add
+                rm
+
+
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
 cd ansibletest2
