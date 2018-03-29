@@ -8,6 +8,12 @@ unstaged         -        staged            -           comitted
                 rm
 
 
+Most used commands:
+--------------------
+git log --pretty=format:"%h - %ce, %cd : %s" --graph --stat
+# show commits where file was adapted:
+git log --pretty=format:"%h - %ce, %cd : %s" --graph --stat tests/startplaybook.sh
+
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
 cd ansibletest2
