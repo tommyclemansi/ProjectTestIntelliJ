@@ -10,7 +10,9 @@ unstaged         -        staged            -           comitted
 
 commit:
 -------
-
+head (where you are now -- moves with checkout)
+ |
+ |
 branch
  |
  |
@@ -21,7 +23,7 @@ commit   --  tree  -- blob1
 
 Most used commands:
 --------------------
-# show commits where file was adapted:
+# show commits where file was adapted (note shows only current branch):
 git log --pretty=format:"%h - %ce, %cd : %s" --graph --stat (tests/startplaybook.sh)
 
 # diffs:
@@ -362,6 +364,35 @@ version 1.0
 git stash (save changes on stack without commit)
 git stash list
 git stash apply
+
+
+7515524@s51lvrw:~/ansible/ansibletest1 $ git log --pretty=format:"%h - %ce, %cd : %s" --graph
+*   af97a58 - 7515524@s51lvrw.cmc.be, Thu Mar 29 13:57:52 2018 +0200 : test merged branches
+|\
+| * af27d2a - 7515524@s51lvrw.cmc.be, Thu Mar 29 13:51:13 2018 +0200 : added test in test branch
+* | c6d848a - 7515524@s51lvrw.cmc.be, Thu Mar 29 13:52:29 2018 +0200 : this is a commit from master
+|/
+* d9efb91 - 7515524@s51lvrw.cmc.be, Wed Mar 28 14:40:58 2018 +0200 : added new file test
+* 74181af - tom.cleymans@cm.be, Wed Feb 7 13:19:49 2018 +0100 : added tmp directory
+* 83f23c7 - tom.cleymans@cm.be, Wed Feb 7 13:19:10 2018 +0100 : fixed relative location of files
+* 6828bc4 - tom.cleymans@cm.be, Tue Feb 6 17:12:11 2018 +0100 : move existing test to git
+7515524@s51lvrw:~/ansible/ansibletest1 $ git branch
+* master
+  test
+7515524@s51lvrw:~/ansible/ansibletest1 $ git branch -d test
+Deleted branch test (was af27d2a).
+7515524@s51lvrw:~/ansible/ansibletest1 $ git log --pretty=format:"%h - %ce, %cd : %s" --graph
+*   af97a58 - 7515524@s51lvrw.cmc.be, Thu Mar 29 13:57:52 2018 +0200 : test merged branches
+|\
+| * af27d2a - 7515524@s51lvrw.cmc.be, Thu Mar 29 13:51:13 2018 +0200 : added test in test branch
+* | c6d848a - 7515524@s51lvrw.cmc.be, Thu Mar 29 13:52:29 2018 +0200 : this is a commit from master
+|/
+* d9efb91 - 7515524@s51lvrw.cmc.be, Wed Mar 28 14:40:58 2018 +0200 : added new file test
+* 74181af - tom.cleymans@cm.be, Wed Feb 7 13:19:49 2018 +0100 : added tmp directory
+* 83f23c7 - tom.cleymans@cm.be, Wed Feb 7 13:19:10 2018 +0100 : fixed relative location of files
+* 6828bc4 - tom.cleymans@cm.be, Tue Feb 6 17:12:11 2018 +0100 : move existing test to git
+
+
 
 2DO
 ===
