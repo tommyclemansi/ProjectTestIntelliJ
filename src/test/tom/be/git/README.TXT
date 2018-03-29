@@ -8,6 +8,17 @@ unstaged         -        staged            -           comitted
                 rm
 
 
+commit:
+-------
+
+branch
+ |
+ |
+commit   --  tree  -- blob1
+                   -- blob2
+         --  parentcommit
+
+
 Most used commands:
 --------------------
 # show commits where file was adapted:
@@ -15,6 +26,9 @@ git log --pretty=format:"%h - %ce, %cd : %s" --graph --stat (tests/startplaybook
 
 # diffs:
 git difftool --tool=vimdiff2 (--staged)
+
+# pushen:
+git push origin --tags
 
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
