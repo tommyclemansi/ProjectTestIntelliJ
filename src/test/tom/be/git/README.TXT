@@ -32,8 +32,15 @@ git difftool --tool=vimdiff2 (--staged)
 # pushen:
 git push origin --tags
 
-# branches: (fetch gets the remote changed files, but does not touch the working directory)
+# branches: (fetch gets the remote changed files, but does not touch the working directory, also fetches remote branches but does not create these automagically)
 git fetch --all; git branch -vv
+git checkout master
+# show commits in origin/master that are not in master (if we are behind)
+git log master..origin/master
+git merge origin/master
+
+# diff commits between master & test branch
+git log master...test --pretty=format:"%h - %ce, %cd : %s" --graph --stat 
 
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
@@ -236,6 +243,17 @@ git branch -d test (delete test branch)
 
 # zelfde als boven voor 3way merge
 # indien conflicten: git mergetool, of manueel fixen en dan git add (git status om issues te zien)
+
+# if you don't have a clean working directory:
+7515524@s51lvrw:~/ansible/ansibletest1 $ git merge origin/master
+Updating af97a58..e5d2778
+error: Your local changes to the following files would be overwritten by merge:
+        ansible.cfg
+Please, commit your changes or stash them before you can merge.
+Aborting
+
+
+
 
 
 # rebasing
