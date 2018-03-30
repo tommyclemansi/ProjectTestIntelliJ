@@ -32,6 +32,9 @@ git difftool --tool=vimdiff2 (--staged)
 # pushen:
 git push origin --tags
 
+# branches: (fetch gets the remote changed files, but does not touch the working directory)
+git fetch --all; git branch -vv
+
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
 cd ansibletest2
