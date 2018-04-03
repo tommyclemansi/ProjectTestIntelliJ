@@ -39,7 +39,11 @@ git checkout master
 git log master..origin/master
 git merge origin/master
 
-# diff commits between master & test branch
+# this is the same:
+git log origin/master --not master
+
+
+# diff commits between master & test branch (not since the same parent only, sio will display add changes that went into master since parent !)
 git log master...test --pretty=format:"%h - %ce, %cd : %s" --graph --stat 
 
 Create a new repository
@@ -252,7 +256,27 @@ error: Your local changes to the following files would be overwritten by merge:
 Please, commit your changes or stash them before you can merge.
 Aborting
 
+#cherry picking:
+7515524@s51lvrw:~/ansible/ansibletest1 $ git log master..newbrancher
+commit 322c8aafc63543ff21e19fbf2d814032b350ce91
+Author: Tom Cleymans <7515524@s51lvrw.cmc.be>
+Date:   Tue Apr 3 14:43:23 2018 +0200
 
+    test
+
+commit 353d63739278d7ae8e542c33c1ba9a242ff2f8ae
+Author: Tom Cleymans <7515524@s51lvrw.cmc.be>
+Date:   Tue Apr 3 13:52:41 2018 +0200
+
+    yes this is fromantoherbrancher
+7515524@s51lvrw:~/ansible/ansibletest1 $ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+7515524@s51lvrw:~/ansible/ansibletest1 $ git cherry-pick 322c8aafc63543ff21e19fbf2d814032b350ce91
+[master 2a16827] test
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+==> note another sha-1
 
 
 
@@ -272,6 +296,10 @@ git merge mybranch
 # take the client branch, (diff from server branch) and apply on master
 git rebase --onto master server client
 
+patches:
+--------
+git format-patch -M origin/master
+==> generates 2 patches (if ahead 2 with origin/master)
 
 # apply patches
 git apply(only with diff files) of met git am (format-patch).
@@ -380,6 +408,8 @@ tag v1.0
 tagger Cleymans Tom (100) <tom.cleymans@cm.be> 1521193152 +0100
 
 version 1.0
+
+
 
 
 git stash (save changes on stack without commit)
