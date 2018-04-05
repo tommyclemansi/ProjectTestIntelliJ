@@ -42,9 +42,23 @@ git merge origin/master
 # this is the same:
 git log origin/master --not master
 
+# show last reflogs (useful for getting back after a reset)
+git log -g --pretty=format:"%h - %ce, %cd : %s"
 
 # diff commits between master & test branch (not since the same parent only, sio will display add changes that went into master since parent !)
 git log master...test --pretty=format:"%h - %ce, %cd : %s" --graph --stat 
+
+# wd bijhouden (verstoppen(after this wd is clean)) -- note only tracked files 
+git stash
+git stash list
+git stash apply
+git stash apply --index (also stage aleady staged files)
+
+# rebase
+git rebase -i e5d2778
+
+# goto parent commit (and leave files unstaged)
+git reset HEAD^ 
 
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
@@ -295,6 +309,8 @@ git merge mybranch
 #or
 # take the client branch, (diff from server branch) and apply on master
 git rebase --onto master server client
+
+git rebase -i 
 
 patches:
 --------
