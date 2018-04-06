@@ -59,6 +59,14 @@ git rebase -i e5d2778
 
 # goto parent commit (and leave files unstaged)
 git reset HEAD^ 
+reset: moves what HEAD points to (for example move MASTER)
+checkout: moves HEAD itself (but not the pointer HEAD points to , for example, MASTER)
+https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified
+reset --mixed (default: update commit + index (stage))
+reset --soft (only update commit)
+reset --hard (commit+index+wd)--> your work is +- lost
+
+git reset file (default is mixed, so means that it will copy the file from HEAD to stage --> like unstage file)
 
 Create a new repository
 git clone https://XXXXXX@host.XXXX./....git
