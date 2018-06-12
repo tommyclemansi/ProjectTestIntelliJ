@@ -1,0 +1,7 @@
+some basic info on generics
+=============================
+
+type erasure: after compile generic info gone
+
+new String[10] ==> an array (info is stored at runtime that the type is String, an array of Strings) (reified type)
+new List<String>() ==> no info is stored (non-reified type)
