@@ -490,19 +490,36 @@ INTERNALS
 =========
 showing how commits are stored:
 
-7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe (master)
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
+$ git commit -m "added some content to the stars file"µ
+[master 4e30fbc] added some content to the stars fileµ
+ 1 file changed, 1 insertion(+)
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
 $ git log --graph --oneline
-* 993c7a1 (HEAD -> master) creation of the universe
+* 4e30fbc (HEAD -> master) added some content to the stars fileµ
+* 993c7a1 creation of the universe
 
-7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe (master)
-$ git cat-file -p 993c7a1
-tree 0d84dfad095e2b004c0d86f2c0aec951566e5c67
-author Tom Cleymans <tom.cleymans@cm.be> 1544089999 +0100
-committer Tom Cleymans <tom.cleymans@cm.be> 1544089999 +0100
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
+$ git cat-file -p 4e30fbc
+tree fe99c4946e4b558125391372f180c98fa0c1d99a
+parent 993c7a155a66b291cfe37448b1f1b316bf0ecf0b
+author Tom Cleymans <tom.cleymans@cm.be> 1544090440 +0100
+committer Tom Cleymans <tom.cleymans@cm.be> 1544090440 +0100
 
-creation of the universe
+added some content to the stars fileµ
 
-7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe (master)
-$ git cat-file -p  0d84df
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
+$ git cat-file -p fe99c494
 100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    earth.txt
-040000 tree fbaff28672aa8e5f88a902c27fb3ddbfdef98c8a    stars
+040000 tree f8c863f222afa06b084ffd050e8cc7c53b59e8c9    stars
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
+$ git cat-file -p  f8c863f2
+100644 blob f95c11de26cce8cef1755654b088078780c42843    sun.txt
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
+$ git cat-file -p f95c11d
+this is some content
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
