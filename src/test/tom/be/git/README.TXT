@@ -21,6 +21,9 @@ commit   --  tree  -- blob1
          --  parentcommit
 
 
+
+head references the commit where you are on your working directory
+
 Most used commands:
 --------------------
 # show commits where file was adapted (note shows only current branch):
