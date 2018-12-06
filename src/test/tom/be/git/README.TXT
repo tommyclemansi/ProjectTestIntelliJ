@@ -484,3 +484,25 @@ pull request feature (developer's review)
 https://www.atlassian.com/git/tutorials/making-a-pull-request
 best read:
 https://git-scm.com/book/nl/v1/Aan-de-slag-De-basis-van-Git
+
+
+INTERNALS
+=========
+showing how commits are stored:
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe (master)
+$ git log --graph --oneline
+* 993c7a1 (HEAD -> master) creation of the universe
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe (master)
+$ git cat-file -p 993c7a1
+tree 0d84dfad095e2b004c0d86f2c0aec951566e5c67
+author Tom Cleymans <tom.cleymans@cm.be> 1544089999 +0100
+committer Tom Cleymans <tom.cleymans@cm.be> 1544089999 +0100
+
+creation of the universe
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe (master)
+$ git cat-file -p  0d84df
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    earth.txt
+040000 tree fbaff28672aa8e5f88a902c27fb3ddbfdef98c8a    stars
