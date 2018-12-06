@@ -281,6 +281,7 @@ error: Your local changes to the following files would be overwritten by merge:
 Please, commit your changes or stash them before you can merge.
 Aborting
 
+
 #cherry picking:
 7515524@s51lvrw:~/ansible/ansibletest1 $ git log master..newbrancher
 commit 322c8aafc63543ff21e19fbf2d814032b350ce91
@@ -532,3 +533,28 @@ this is some content
 $ ll
 total 1
 -r--r--r-- 1 7515524 1049089 45 Dec  6 11:03 fbd6be47f90a0fc5797c5ac2fc6f4cbacd34a0
+
+
+branching
+---------
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab25/toys (master)
+$ git log --graph --oneline
+* e88af1c (HEAD -> master) furby.txt created and initial price added
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab25/toys (master)
+$ git log --all --decorate --oneline --graph
+* 5a9b0ef (experimental) killerRobot added with initial price set
+* e88af1c (HEAD -> master) furby.txt created and initial price added
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab25/toys ((0ff2998...))
+$ git log --graph --all --oneline
+* 0ff2998 (HEAD, master) test
+* 8417ca4 test detached
+* 42ca31b added drone
+| * 5a9b0ef (experimental) killerRobot added with initial price set
+|/
+* e88af1c furby.txt created and initial price added
+
+
+git log --graph --all --oneline
+git branch -r
+git branch -vv
