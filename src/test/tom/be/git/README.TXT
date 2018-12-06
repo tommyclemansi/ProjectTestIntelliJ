@@ -523,3 +523,9 @@ $ git cat-file -p f95c11d
 this is some content
 
 7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/stars (master)
+
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab11_02/universe/.git/objects/f4 (GIT_DIR!)
+$ ll
+total 1
+-r--r--r-- 1 7515524 1049089 45 Dec  6 11:03 fbd6be47f90a0fc5797c5ac2fc6f4cbacd34a0
