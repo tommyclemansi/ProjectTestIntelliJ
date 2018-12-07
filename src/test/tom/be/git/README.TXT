@@ -556,5 +556,53 @@ $ git log --graph --all --oneline
 
 
 git log --graph --all --oneline
-git branch -r
+git branch -r (show remote tracking)
 git branch -vv
+
+
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git branch -vv
+* master 1eac328 Commit A - infantery
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git branch -vv
+* master 1eac328 Commit A - infantery
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git log --graph --all --oneline
+* 1eac328 (HEAD -> master, origin/master) Commit A - infantery
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git branch -u origin/master
+Branch master set up to track remote branch master from origin.
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git branch -vv
+* master 1eac328 [origin/master] Commit A - infantery
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$
+
+7515524@L51W5RM MINGW64 /c/study/masterclass/GIT/labs/codelab28 (master)
+$ git log --graph --all --oneline
+* 1eac328 (HEAD -> master, origin/master) Commit A - infantery
